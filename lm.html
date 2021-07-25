@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form action="">
+            <label for="">tên sách</label>
+            <input type="text" name="book" id="book" value=""><br>
+            <label for="">tac gia</label>
+            <input type="text" name="author" id="author" value=""><br>
+            <label for="">Dia chi web</label>
+            <input type="text" name="address" id="address" value=""><br>
+            <label for="">Mo ta</label>
+            <textarea name="mota" id="mota" cols="20" rows="10"value=""></textarea><br>
+            <input type="button" value="gui di" onclick="Solve()">
+            <input type="reset" value="Huy Bo">
+            
+        </form>
+        <script>
+            function Solve() {
+                var book = document.getElementById('book').value
+                var author = document.getElementById('author').value
+                var address = document.getElementById('address').value
+                var mota = document.getElementById('mota').value
+                if(book.length == 0|| author.length == 0||address.lenght == 0||mota.lenght==0){
+                alert("khong de trong")
+                return
+            }
+            var test1 = address.substr(0,4)
+            var test2 = address.substr(0,5)
+            if(test1 !='http'&& test2!='https')
+            {
+                alert("nhap du lieu sai")
+                return
+            }
+            var chisocuoi = address.length -1
+            if(address[chisocuoi]== '-')
+            {
+                alert("du lieu sai")
+                return
+            }
+            for(var i=0;i<=chisocuoi;i++)
+            {
+                if(address[i]==' ')
+                {
+                    alert("Du lieu sai")
+                    return
+
+                }
+            }
+            alert("dang ky thanh cong")
+        }
+
+        </script>
+    </body>
+    </html>
